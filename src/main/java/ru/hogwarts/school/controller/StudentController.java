@@ -6,6 +6,7 @@ import ru.hogwarts.school.model.Student;
 import ru.hogwarts.school.service.StudentService;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -46,9 +47,12 @@ public class StudentController {
     }
 
     @GetMapping("/age")
-    public List<Student> getStudentsForAge (@PathVariable int age) {
+    public ResponseEntity<List<Student>> getStudentsForAge (@PathVariable int age) {
+        if (age == 0 || age < 0) {
+            return ResponseEntity.ok(Collections.emptyList());
+        }
         List<Student> students = studentService.getStudentsForAge(age);
-        return students;
+        return ResponseEntity.ok(students);
     }
 
 

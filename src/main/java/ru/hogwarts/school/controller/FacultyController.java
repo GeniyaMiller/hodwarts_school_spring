@@ -7,6 +7,7 @@ import ru.hogwarts.school.model.Student;
 import ru.hogwarts.school.service.FacultyService;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -47,10 +48,11 @@ public class FacultyController {
     }
 
     @GetMapping("/age")
-    public List<Faculty> getFacultiesForColor (@PathVariable String color) {
+    public ResponseEntity<List<Faculty>> getFacultiesForColor (@PathVariable String color) {
+        if (color == null || color.isBlank()) {
+            return ResponseEntity.ok(Collections.emptyList());
+        }
         List<Faculty> faculties = facultyService.getFacultiesForColor(color);
-        return faculties;
+        return ResponseEntity.ok(faculties);
     }
-
-
 }
