@@ -39,7 +39,7 @@ public class StudentService {
     }
 
     public List<Student> getStudentsForAge(int age) {
-        List<Student> students = studentMap.values().stream().filter(student -> student.getAge() = age).toList();
+        List<Student> students = studentMap.values().stream().filter(student -> student.getAge() == age).toList();
         return students;
 
     }

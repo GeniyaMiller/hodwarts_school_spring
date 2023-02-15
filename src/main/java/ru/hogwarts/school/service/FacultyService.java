@@ -33,7 +33,7 @@ public class FacultyService {
 
 
     public List<Faculty> getFacultiesForColor(String color) {
-        return facultyMap.values().stream().filter(faculty -> faculty.getColor() = color).toList();
+        return facultyMap.values().stream().filter(faculty -> faculty.getColor().equals(color)).toList();
     }
 }
 
