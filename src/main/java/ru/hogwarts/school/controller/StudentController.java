@@ -47,7 +47,7 @@ public class StudentController {
     }
 
     @GetMapping("/age")
-    public ResponseEntity<List<Student>> getStudentsForAge (@PathVariable int age) {
+    public ResponseEntity<List<Student>> getStudentsForAge (@RequestParam int age) {
         if (age == 0 || age < 0) {
             return ResponseEntity.ok(Collections.emptyList());
         }

@@ -47,8 +47,8 @@ public class FacultyController {
         return facultyService.removeFaculty(id);
     }
 
-    @GetMapping("/age")
-    public ResponseEntity<List<Faculty>> getFacultiesForColor (@PathVariable String color) {
+    @GetMapping("/color")
+    public ResponseEntity<List<Faculty>> getFacultiesForColor (@RequestParam String color) {
         if (color == null || color.isBlank()) {
             return ResponseEntity.ok(Collections.emptyList());
         }
