@@ -24,21 +24,21 @@ public class FacultyController {
         if (id == null) {
             return ResponseEntity.notFound().build();
         }
-        Faculty Faculty = facultyService.findFaculty(id);
-        return ResponseEntity.ok(Faculty);
+        Faculty faculty = facultyService.findFaculty(id);
+        return ResponseEntity.ok(faculty);
     }
 
     @PostMapping
-    public Faculty createFaculty (@RequestBody Faculty Faculty) {
-        return facultyService.createFaculty(Faculty);
+    public Faculty createFaculty (@RequestBody Faculty faculty) {
+        return facultyService.createFaculty(faculty);
     }
 
     @PutMapping
-    public ResponseEntity<Faculty> editeFaculty(@RequestBody Faculty Faculty) {
-        if (Faculty == null) {
+    public ResponseEntity<Faculty> editeFaculty(@RequestBody Faculty faculty) {
+        if (faculty == null) {
             return ResponseEntity.notFound().build();
         }
-        Faculty foundFaculty = facultyService.editeFaculty(Faculty);
+        Faculty foundFaculty = facultyService.editeFaculty(faculty);
         return ResponseEntity.ok(foundFaculty);
     }
 

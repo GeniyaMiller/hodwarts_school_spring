@@ -22,7 +22,6 @@ public class FacultyService {
     }
 
     public Faculty findFaculty (Long id) {
-
         return facultyRepository.findById(id).get();
     }
 

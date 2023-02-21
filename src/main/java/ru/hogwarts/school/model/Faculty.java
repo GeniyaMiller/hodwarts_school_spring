@@ -1,5 +1,7 @@
 package ru.hogwarts.school.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,21 +9,11 @@ import java.util.Objects;
 @Entity
 public class Faculty {
 
-@Id
-@GeneratedValue
+    @Id
+    @GeneratedValue
     private long id = 0L;
     private String name;
     private String color;
-
-    public Faculty(String name, String color) {
-        this.name = name;
-        this.color = color;
-    }
-
-    public Faculty() {
-
-    }
-
 
     public void setId(long id) {
         this.id = id;
