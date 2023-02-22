@@ -8,12 +8,25 @@ import javax.persistence.Id;
 import java.util.Objects;
 @Entity
 public class Faculty {
-
     @Id
     @GeneratedValue
     private long id = 0L;
     private String name;
     private String color;
+
+    public Faculty(long id, String name, String color) {
+        this.id = id;
+        this.name = name;
+        this.color = color;
+    }
+
+    public Faculty() {
+
+    }
+
+    public long getId() {
+        return id;
+    }
 
     public void setId(long id) {
         this.id = id;
